@@ -1,0 +1,148 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.5 Offer css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-offer{
+    &-area{
+        @media #{$md,$sm,$xs} {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    &-item{
+        position: relative;
+        &-content{
+            padding: 45px 40px;
+            margin: -85px 30px 0 0;
+            overflow: hidden;
+            background: var(--tp-common-white);
+            box-shadow: 0px 4px 20px 0px rgba(22, 23, 26, 0.04);
+            @media #{$md,$sm,$xs} {
+                padding: 20px;
+            }
+            & .shape{
+                position: absolute;
+                top: -30px;
+                right: -30px;
+                opacity: 0;
+                transition: all 0.5s linear;
+            }
+        }
+        &:hover{
+            & .tp-offer{
+                &-item{
+                    &-content{
+                        & .shape{
+                            top: 0;
+                            right: 0;
+                            opacity: 1;
+                        }
+                    }
+                    &-thumb{
+                        & img{
+                            transform: scale(1.1) rotate(-2deg);
+                        }
+                    }
+                }
+                &-btn{
+                    & a{
+                        background: var(--tp-theme-primary);
+                        & i{
+                            color: var(--tp-common-white);
+                        }
+                    }
+                }
+            }
+        }
+        &-thumb{
+            overflow: hidden;
+            & img{
+                width: 100%;
+                transition: 0.9s;
+            }
+        }
+    }
+    &-title{
+        position: relative;
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        @extend %transition;
+        & a{
+            &:hover{
+                color: var(--tp-theme-primary);
+            }
+        }
+    }
+    &-btn{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        & a{
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            line-height: 45px;
+            text-align: center;
+            background: #f6f6f6;
+            @include transition();
+            & i{
+                font-size: 18px;
+                color: var(--tp-heading-primary);
+                @include transition();
+            }
+        }
+    }
+    &-slider-wrapper{
+        margin-right: -365px;
+        @media #{$x5l} {
+            margin-right: -310px;
+        }
+        @media #{$x4l} {
+            margin-right: -260px;
+        }
+        @media #{$x3l} {
+            margin-right: -210px;
+        }
+        @media #{$xxl} {
+            margin-right: -110px;
+        }
+        @media #{$xl,$lg,$md,$sm,$xs} {
+            margin-right: 0;
+        }
+    }
+    &-nav{
+        position: relative;
+        @media #{$sm,$xs} {
+            display: none;
+        }
+        & button{
+            position: absolute;
+            bottom: -150px;
+            right: 60px;
+            height: 40px;
+            width: 40px;
+            line-height: 44px;
+            z-index: 1;
+            background: var(--tp-common-white);
+            @include transition();
+            &:hover{
+                background: var(--tp-theme-primary);
+                & i{
+                    color: var(--tp-common-white);
+                }
+            }
+            & i{
+                font-size: 18px;
+                font-weight: 400;
+                @include transition();
+                color: var(--tp-heading-primary);
+            }
+            &.service-button-next-1{
+                right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 Brand css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-brand{
+    &-item{
+        & img{
+            opacity: 0.26;
+            @include transition();
+        }
+        &:hover{
+            & img{
+                opacity: 1;
+            }
+        }
+    }
+    &-slider{
+        & .tp-brand-active{
+            & .swiper-slide-active{
+                & .tp-brand-item{
+                    & img{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,177 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  9.0 Support css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-support{
+    &-bg{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-shape{
+        & .shape-1{
+            position: absolute;
+            top: -34%;
+            right: 0;
+            z-index: 2;
+            @media #{$x4l,$x3l} {
+               top: -17%;
+            }
+            @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .shape-2{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .shape-3{
+            position: absolute;
+            bottom: 0;
+            right: 384px;
+            z-index: 1;
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .shape-4{
+            position: absolute;
+            top: 0;
+            right: 400px;
+            z-index: 0;
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .shape-5{
+            position: absolute;
+            top: 0;
+            right: 400px;
+            z-index: 0;
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+    }
+    &-title{
+        &-wrapper{
+            margin-bottom: 60px;
+            & .tp-section-title{
+                color: var(--tp-common-white);
+                &-pre{
+                    color: #9d9fa2;
+                }
+            }
+        }
+    }
+    &-tab{
+        position: relative;
+        z-index: 5;
+        & .nav-tabs{
+            border-bottom: none;
+        }
+        &-content{
+            padding: 40px 0px 40px 40px;
+            background-color: var(--tp-common-white);
+            @media #{$xl} {
+                padding: 40px 0px 40px 25px;
+            }
+            @media #{$lg,$xs} {
+                padding: 40px 0px 40px 20px;
+            }
+        }
+        & .nav-item{
+            border-radius: 0;
+            @media #{$sm,$xs} {                
+                &:not(:last-of-type){
+                    margin-bottom: 10px;
+                }
+            }
+            & .nav-link{
+                position: relative;
+                border-radius: 0;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 11px 39px;
+                margin-right: 10px;
+                margin-bottom: 0px;
+                color: var(--tp-common-white);
+                background: var(--tp-theme-primary);
+                @media #{$md,$sm,$xs} {
+                    padding: 10px 24px;
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 0%;
+                    background-color: #f4f4f4;
+                    left: 0;
+                    bottom: 0;
+                    @extend %transition;
+                }
+                &:hover{
+                    border: 1px solid var(--tp-theme-primary);
+                }
+                &.active{
+                    color: var(--tp-heading-primary);
+                    background-color: var(--tp-common-gray);
+                    &::after{
+                        height: 100%;
+                        z-index: -1;
+                    }
+                    &:hover{
+                        border: 1px solid var(--tp-common-gray);
+                    }
+                }
+            }
+        }
+    }
+    &-list{
+        margin-right: 40px;
+        @media #{$xl,$lg} {
+            margin-right: 15px;
+        }
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 30px;
+        }
+        & ul{
+            & li{
+                font-size: 16px;
+                list-style: none;
+                color: #16171a;
+                &:not(:last-of-type){
+                    margin-bottom: 15px;
+                }
+                & i{
+                    margin-right: 10px;
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+    }
+    &-text{
+        margin-right: 40px;
+        @media #{$xl,$lg} {
+            margin-right: 30px;
+        }
+        @media #{$sm,$xs} {
+            margin-bottom: 30px;
+        }
+        & p{
+            font-size: 16px;
+            font-weight: 500;
+            & br{
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+}

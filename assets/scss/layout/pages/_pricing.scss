@@ -1,0 +1,127 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.6 Pricing css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-pricing{
+    &-area{
+      @media #{$md,$sm,$xs} {
+        padding-bottom: 30px;
+      }
+    }
+    &-item{
+      padding: 90px 60px 40px;
+      border: 1px solid #f2edeb;
+      @media #{$lg,$md,$xs} {
+        padding: 80px 25px 40px;
+      }
+      @media #{$md,$sm,$xs} {
+        margin-bottom: 70px;
+      }
+      &.active{
+        border: 1px solid var(--tp-theme-primary);
+      }
+    }
+    &-shape{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
+    &-wrapper{
+      @media #{$md,$sm,$xs} {
+        margin-bottom: 30px;
+      }
+    }
+    &-tag{
+      position: absolute;
+      top: -45px;
+      left: -1px;
+      height: 90px;
+      padding: 19px 50px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 6px 40px 0px rgba(35, 35, 49, 0.04);
+      & span{
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--tp-heading-primary);
+        & i{
+          margin-right: 24px;
+          font-size: 40px;
+          display: inline-block;
+          transform: translateY(10px);
+          color: var(--tp-theme-secondary);
+        }
+        &.active{
+          & i{
+            color: var(--tp-theme-primary);
+          }
+        }
+      }
+    }
+    &-title{
+      font-size: 50px;
+      font-weight: 800;
+      color: var(--tp-theme-secondary);
+      &.active{
+        color: var(--tp-theme-primary);
+      }
+    }
+    &-content{
+      padding-bottom: 40px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #f2edeb;
+    }
+    &-list{
+      & ul{
+        margin-bottom: 35px;
+        & li{
+          list-style: none;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 10px;
+          color: var(--tp-text-body);
+          & i{
+            color: #e20935;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    &-btn{
+      & .nav-tabs{
+        border: none;
+        & .nav-item{
+          margin-left: 10px;
+          & .nav-link{
+            border: none;
+            background: #f4f4f4;
+            padding: 17px 52px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 0 0 0 0;
+            color: var(--tp-heading-primary);
+            @media #{$lg,$xs} {
+              padding: 17px 40px;
+            }
+            &.active{
+              background: var(--tp-theme-primary);
+              color: var(--tp-common-white);
+            }
+          }
+        }
+      }
+      &.disabled{
+        & .tp-btn{
+          color: var(--tp-heading-primary);
+          background: #f4f4f4;
+          &:hover{
+            background: var(--tp-heading-primary);
+            color: var(--tp-common-white);
+          }
+        }
+      }
+    }
+}

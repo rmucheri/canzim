@@ -1,0 +1,66 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Counter css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-counter{
+    &-bg{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-item{
+        &:hover{
+            & .tp-counter-icon{
+                & span{
+                    &::after{
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    &-icon{
+        margin-bottom: 15px;
+        & span{
+            position: relative;
+            display: inline-block;
+            height: 128px;
+            width: 128px;
+            line-height: 130px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 60px;
+            background-color: rgb(232, 63, 35);
+            color: var(--tp-common-white);
+            z-index: 1;
+            &::after{
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transform: scale(0);
+                @extend %transition;
+                background: var(--tp-heading-primary);
+            }
+        }
+    }
+    &-content{
+        & p{
+            font-size: 16px;
+            color: #feeceb;
+        }
+    }
+    &-title{
+        font-size: 50px;
+        font-weight: 700;
+        margin: 0;
+        color: var(--tp-common-white);
+    }
+}
+  
+  

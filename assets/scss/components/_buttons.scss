@@ -1,0 +1,195 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 Buttons
+/*----------------------------------------*/
+
+.#{$theme-prefix}-btn{
+	position: relative;
+	display: inline-block;
+	padding: 16px 51px;
+	font-weight: 700;
+	font-size: 14px;
+	background: var(--tp-theme-primary);
+	color: var(--tp-common-white);
+	overflow: hidden;
+	@extend %transition;
+	& i{
+		transform: translateY(1px);
+		margin-left: 6px;
+	}
+	&::after{
+		position: absolute;
+		content: "";
+		top: 0;
+		left: -75%;
+		z-index: 2;
+		display: block;
+		width: 50%;
+		height: 100%;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+		transform: skewX(25deg);
+	}
+
+	&:hover{
+		color: var(--tp-common-white);
+		&::after{
+			animation: shine 800ms;
+		}
+	}
+	&:focus{
+		color: var(--tp-common-white);
+	}
+
+}
+
+/* hamburger btn */
+
+.#{$theme-prefix}-hamburger-btn{
+	height: 16px;
+	width: 22px;
+	line-height: 16px;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	& span{
+		background: var(--tp-common-black);
+		border-radius: 3px;
+		content: '';
+		position: absolute;
+		width: 22px;
+		height: 2px;         
+		left: 0;
+		-webkit-transition: .3s ease-in-out;
+		-moz-transition: .3s ease-in-out;
+		-o-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+		&::before,
+		&::after{
+			background: var(--tp-common-black);
+			border-radius: 3px;
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 2px;         
+			margin-top: 13px; 
+			left: 0;
+			-webkit-transition: .3s ease-in-out;
+			-moz-transition: .3s ease-in-out;
+			-o-transition: .3s ease-in-out;
+			transition: .3s ease-in-out;
+		}
+		&::before{
+			margin-top:-7px;
+		}
+		&::after{
+			margin-top: 7px;
+			width: 13px;
+		}
+	}
+	&.active{
+		& span{
+			background: transparent;
+
+			&::before{
+				margin-top: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			&::after{
+				margin-top: 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	&-white{
+		& span{
+			background-color: var(--tp-common-white);
+
+			&::after,
+			&::before{
+				background-color: var(--tp-common-white);
+			}
+		}
+	}
+}
+
+
+.play-btn{
+	position: relative;
+	height: 103px;
+	width: 103px;
+	line-height: 103px;
+	text-align: center;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 32px;
+	font-weight: 900;
+	z-index: 1;
+	color: var(--tp-text-1);
+	background: var(--tp-common-white);
+	@include transition();
+
+	@media #{$md,$sm,$xs} {
+		height: 90px;
+		width: 90px;
+		line-height: 90px;
+		font-size: 25px;
+	}
+	&:hover{
+		transform: scale(1.05);
+	}
+}
+
+
+.hamburger-btn{
+	width: 34px;
+	height: 24px;
+	border: 0;
+	outline: 0;
+	text-align: end;
+	background: transparent;
+	transform: translateY(-20%);
+	& span{
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			background: var(--tp-theme-primary);
+			height: 2px;
+			width: 25px;
+			opacity: 1;
+			z-index: 1;
+			border-radius: 10px;
+			transition: .3s ease;
+			&:nth-child(1){
+					top: 0;
+			}
+			&:nth-child(2){
+					top: 10px;
+					width: 14px;
+					left: 50%;
+					@include transform(translateX(-50%));
+			}
+			&:nth-child(3){
+					top: 20px;
+					right: 0;
+					left: auto;
+			}
+	}
+	&:hover{
+			& span{
+					&:nth-child(1){
+							left: 10px;
+					}
+					
+					&:nth-child(3){
+							right: 10px;
+					}
+			}
+	}
+}

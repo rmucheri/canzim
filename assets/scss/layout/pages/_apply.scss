@@ -1,0 +1,93 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 Apply css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-apply{
+    &-area{}
+    &-thumb{
+        &-wrapper{
+            & .shape{
+                position: absolute;
+                left: -34%;
+                bottom: 0;
+                z-index: -1;
+            }
+            & img{
+                width: 100%;
+                @media #{$md,$sm,$xs} {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    &-btn{
+        padding: 44px 60px 54px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @media #{$xl} {
+            padding: 40px 60px 34px;
+        }
+        @media #{$lg} {
+            padding: 35px 60px 35px;
+        }
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 30px;
+        }
+        @media #{$xs} {
+            padding: 30px;
+        }
+        & .tp-btn{
+            background: var(--tp-theme-secondary);
+        }
+    }
+    &-video{
+        display: block;
+        padding: 70px ;
+        background-repeat: no-repeat;
+        @media #{$lg} {
+            padding: 45px;
+        }
+        @media #{$xs} {
+            padding: 20px;
+        }
+        & a{
+            & i{
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                border: 1px solid;
+                border-color: rgba($color: #ffff, $alpha: 0);
+                text-align: center;
+                line-height: 50px;
+                border-radius: 50%;
+                font-size: 16px;
+                margin-right: 25px;
+                @include transition();
+                color: var(--tp-common-white);
+            }
+            &:hover{
+                & i{
+                    color: var(--tp-theme-primary);
+                    border-color: rgba($color: #ffff, $alpha: 1);
+                }
+            }
+        }
+    }
+    &-title{
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 27px;
+        letter-spacing: 0.2px;
+        @media #{$lg} {
+            font-size: 32px;
+        }
+        & br{
+            @media #{$xs} {
+                font-size: 28px;
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  9.5 Work css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-work{
+    &-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+    }
+    &-item{
+        &.active{
+            & .tp-work-icon{
+                &::after{
+                    background: var(--tp-theme-primary);
+                }
+                &::before{
+                    background: var(--tp-theme-primary);
+                }
+                & b{
+                    background: var(--tp-theme-primary);
+                }
+            }
+        }
+    }
+    &-icon{
+        position: relative;
+        display: inline-block;
+        & span{
+            position: relative;
+            font-size: 80px;
+            height: 200px;
+            width: 200px;
+            line-height: 220px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 30px;
+            z-index: 1;
+            color: var(--tp-heading-primary);
+            background: var(--tp-common-white);
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 220px;
+            height: 205px;
+            top: -2px;
+            left: 1px;
+            border-radius: 50%;
+            @include transition();
+            background: var(--tp-theme-secondary);
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            height: 40px;
+            width: 40px;
+            top: 35%;
+            right: -29%;
+            @include transition();
+            background: var(--tp-theme-secondary);
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        }
+        & b{
+            position: absolute;
+            top: 30%;
+            left: -30px;
+            font-size: 20px;
+            font-weight: 800;
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            z-index: 1;
+            @include transition();
+            color: var(--tp-common-white);
+            background: var(--tp-theme-secondary);
+        }
+    }
+    &-content{
+        & p{
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--tp-heading-primary);
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  5.3 Sidebar css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-sidebar{
+    $self : &;
+    &-wrapper{}
+    &-widget{
+        padding: 50px;
+        background-color: rgb(244, 244, 244);
+        @media #{$xl,$lg,$md,$sm,$xs} {
+            padding: 30px;
+        }
+        &-content{
+            & ul{
+                & li{
+                    list-style: none;
+                    &:not(:last-of-type){
+                        margin-bottom: 5px;
+                    }
+                    & a{
+                        font-size: 16px;
+                        font-weight: 700;
+                        display: block;
+                        padding: 15px 30px;
+                        color: var(--tp-heading-primary);
+                        &:hover{
+                            background: var(--tp-common-white);
+                            color: var(--tp-theme-primary);
+                            & i{
+                                opacity: 1;
+                            }
+                        }
+                        & i{
+                            font-size: 16px;
+                            transform: translateY(5px);
+                            float: right;
+                            opacity: 0;
+                            @include transition();
+                        }
+                    }
+                }
+            }
+        }
+        &-title{
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+    }
+    &-search{
+        &-input{
+            position: relative;
+            & input{
+                font-size: 14px;
+                font-weight: 500;
+                width: 100%;
+                height: 58px;
+                line-height: 58px;
+                padding: 0 25px;
+                padding-right: 25px;
+                padding-right: 60px;
+                background: var(--tp-common-white);
+                border: 1px solid transparent;
+                &::placeholder{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--tp-text-body);
+                }
+                &:focus{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--tp-text-body);
+                    border: 1px solid var(--tp-theme-primary);
+                }
+            }
+            & button{
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 58px;
+                width: 58px;
+                color: var(--tp-common-white);
+                background: var(--tp-theme-secondary);
+                & i{
+                    font-size: 16px;
+                    font-weight: 900;
+                    
+                }
+            }
+        }
+    }
+
+}
+
+  
+
+// tag-cloud
+.tagcloud{
+    & a{
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+        padding: 3px 18px;
+        display: inline-block;
+        color: var(--tp-text-body);
+        background: var(--tp-common-white);
+        margin-bottom: 10px;
+        margin-right: 10px;
+        &:hover{
+            color: var(--tp-common-white);
+            background: var(--tp-theme-secondary);
+        }
+    }
+}
+
+  
