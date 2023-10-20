@@ -1,0 +1,28 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 Footer Style 2
+/*----------------------------------------*/
+
+//footer widget style
+.#{$theme-prefix}-footer{
+    &-area-2{}
+}
+
+
+
+/* footer col design for home 2 */
+.tp-footer-2-col{
+    &-1{
+
+    }
+    &-2{
+        
+    }
+    &-3{
+       
+    }
+    &-4{
+
+    }
+}

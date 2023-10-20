@@ -1,0 +1,109 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  9.3 Travel css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-travel{
+    &-area{
+      @media #{$md,$sm,$xs} {
+        padding-top: 90px;
+      }
+    }
+    &-bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 57%;
+      width: 50%;
+      background-repeat: no-repeat;
+      @media #{$md,$sm,$xs} {
+        display: none;
+      }
+      &-2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-repeat: no-repeat;
+        @media #{$md,$sm,$xs} {
+          display: none;
+        }
+      }
+    }
+    &-wrapper{
+      padding-left: 55px;
+      @media #{$lg} {
+        padding-left: 10px;
+      }
+      @media #{$md,$sm,$xs} {
+        padding-left: 0;
+      }
+      & p{
+        margin-bottom: 35px;
+      }
+      &-2{
+        padding-right: 40px;
+        @media #{$lg} {
+          padding-right: 10px;
+        }
+        @media #{$md,$sm,$xs} {
+          padding-right: 0;
+        }
+        & p{
+          margin-bottom: 35px;
+        }
+      }
+    }
+    &-title{
+      font-size: 50px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      letter-spacing: 0.20px;
+      @media #{$sm,$xs} {
+        font-size: 36px;
+      }
+    }
+    &-content{
+      @media #{$xl,$lg} {
+        padding-bottom: 60px;
+      }
+      @media #{$md,$sm,$xs} {
+        padding-bottom: 0;
+      }
+      &-2{
+        @media #{$md,$sm,$xs} {
+          padding-top: 30px;
+          padding-bottom: 0;
+        }
+      }
+    }
+    &-btn{
+      & .tp-btn{
+        @media #{$sm,$xs} {
+          padding: 16px 40px;
+        }
+      }
+    }
+  }
+
+
+
+.#{$theme-prefix}-error{
+    &-thumb{
+      margin-bottom: 50px;
+      & img{
+        width: 100%;
+      }
+    }
+    &-title{
+      font-size: 50px;
+      font-weight: 800;
+      letter-spacing: 0.20px;
+      margin-bottom: 40px;
+      @media #{$sm,$xs} {
+        font-size: 36px;
+      }
+    }
+}

@@ -1,0 +1,4 @@
+sass --watch D:\Dropbox\pranto\visaho\assets\scss\main.scss:D:\Dropbox\pranto\visaho\assets\css\main.css
+
+
+sass --watch C:\Users\mdpra\Dropbox\pranto\visaho-prev\assets\scss\main.scss:C:\Users\mdpra\Dropbox\pranto\visaho-prev\assets\css\main.css

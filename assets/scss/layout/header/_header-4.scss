@@ -1,0 +1,176 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.4 Header Style 4
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header-4{
+    &-top{
+        padding: 7px 45px 7px 45px;
+        background: var(--tp-heading-primary);
+    }
+    &-sticky{
+        padding: 0 45px;
+        border-bottom: 1px solid;
+        border-color: rgba($color: rgb(255, 255, 255), $alpha: 0.122);
+        @media #{$lg,$md,$sm,$xs} {
+            padding: 22px;
+        }
+        &.headroom{
+            &--pinned{
+                background: var(--tp-heading-primary);
+                & .tp-header-4-logo{
+                    &::after{
+                        height: 110px;
+                        top: -40px;
+                    }
+                }
+            }
+            &--top{
+                &.headroom--pinned{
+                    background: transparent;
+                    & .tp-header-4-logo{
+                        &::after{
+                            height: 120px;
+                            top: -35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-logo{
+        &::after{
+            position: absolute;
+            content: '';
+            height: 120px;
+            top: -35px;
+            width: 1px;
+            right: 5%;
+            background: rgba($color: rgb(255, 255, 255), $alpha: 0.122);
+            @media #{$x3l} {
+                right: -10px;
+            }
+            @media #{$xxl,$lg,$md,$sm,$xs} {
+                content: none;
+            }
+            @media #{$xl} {
+                right: 0;
+                top: -35px;
+            }
+        }
+        & img{
+            @media #{$xxl} {
+                width: 100%;
+            }
+        }
+    }
+    &-main{
+        &-menu{
+            margin-left: 10px;
+            @media #{$xxl,$lg,$md,$sm,$xs} {
+                margin-left: 0;
+            }
+            & .tp-main-menu{
+                & ul{
+                    & li{
+                        &:hover{
+                            & > a{
+                                color: var(--tp-theme-primary);
+                            }
+                        }
+                        &.has-dropdown{
+                            &:hover{
+                                & > a{
+                                    color: var(--tp-theme-primary);
+                                }
+                            }
+                            & > a{
+                                &::after{
+                                    content: none;
+                                }
+                            }
+                        }
+                        & a{
+                            color: var(--tp-common-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-contact{
+        &-inner{
+            margin-left: 30px;
+            @media #{$xxl} {
+                margin-left: 20px;
+            }
+            & .tp-header-contact-content {
+                & p{
+                    color: var(--tp-common-white);
+                }
+                & span{
+                    color: var(--tp-common-white);
+                    & a{
+                        &:hover{
+                            color: var(--tp-theme-primary);
+                        }
+                    }
+                }
+            }
+        }
+        &-icon{
+            margin-right: 20px;
+            & img{
+                border-radius: 50%;
+            }
+        }
+        &-search{
+            & span{
+                font-size: 22px;
+                color: var(--tp-common-white);
+                cursor: pointer;
+                @include transition();
+                &:hover{
+                    color: var(--tp-theme-primary);
+                }
+            }
+        }
+    }
+    &-right{
+        &-cart{
+            margin-left: 30px;
+            & button{
+                & i{
+                    font-size: 22px;
+                    @include transition();
+                    color: var(--tp-common-white);
+                }
+                &:hover{
+                    & i{
+                        color: var(--tp-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+    &-btn{
+        & .tp-btn{
+            padding: 15px 50px;
+            background: transparent;
+            color: var(--tp-common-white);
+            border: 1px solid rgb(171, 171, 171);
+            @media #{$xxl} {
+                padding: 15px 18px;
+            }
+            @media #{$xl} {
+                padding: 15px 40px;
+            }
+        }
+    }
+}
+
+  
+
+
+  

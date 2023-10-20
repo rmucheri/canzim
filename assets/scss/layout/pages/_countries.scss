@@ -1,0 +1,429 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.9 Countries css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-countries{
+    &-item{
+        position: relative;
+        &:hover{
+            & .tp-countries{
+                &-name{
+                    bottom: 50%;
+                    opacity: 1;
+                    transition: all .4s ease-in-out;
+                }
+                &-thumb{
+                    & img{
+                        transform: scale(1.1) rotate(-2deg);
+                    }
+                    &::after{
+                        height: 100%;
+                        top: auto;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    &-thumb{
+        position: relative;
+        overflow: hidden;
+        &::after{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0;
+            bottom: auto;
+            top: 0;
+            left: 0;
+            background: rgba($color: #214be0, $alpha: 0.9);
+            @extend %transition;
+            z-index: 1;
+        }
+        & img{
+            width: 100%;
+            transition: 0.9s;
+        }
+    }
+    &-name{
+        position: absolute;
+        left: 50%;
+        bottom: 30%;
+        opacity: 0;
+        z-index: 1;
+        transform: translateX(-50%);
+    }
+    &-title{
+        font-size: 30px;
+        font-weight: 800;
+        color: var(--tp-common-white);
+    }
+    &-flag{
+        position: relative;
+        margin-top: -50px;
+        display: inline-block;
+        border-radius: 50%;
+        z-index: 1;
+        background-color: var(--tp-common-white);
+        & img{
+            border-radius: 50%;
+            transform: scale(0.9);
+        }
+    }
+
+
+
+    &-2{
+        &-bg{
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        &-shape{
+            position: absolute;
+            top: 0;
+            right: 0px;
+        }
+    }
+
+
+
+    &-visit{
+        &-bg{
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }
+        &-shape{
+            position: absolute;
+            top: 0;
+            left: 0;
+            @media #{$sm,$xs} {
+                display: none;
+            }
+        }
+        &-item{
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 8px 24px 0px rgba(35, 35, 49, 0.06);
+            padding: 40px 70px;
+            z-index: 1;
+            @media #{$sm} {
+                padding: 40px 35px;
+            }
+            &::before{
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                height: 0;
+                width: 100%;
+                @include transition();
+                z-index: -1;
+                background-image: -moz-linear-gradient(-90deg, #f94c30 0%, #542018 72%, rgb(19, 19, 19) 100%);
+                background-image: -webkit-linear-gradient(-90deg, #f94c30 0%, #542018 72%, rgb(19, 19, 19) 100%);
+                background-image: -ms-linear-gradient(-90deg, #f94c30 0%, #542018 72%, rgb(19, 19, 19) 100%);
+            }
+            &:hover{
+                &::before{
+                    height: 100%;
+                }
+                & .tp-countries-visit{
+                    &-title{
+                        color: var(--tp-common-white);
+                    }
+                    &-icon{
+                        & span{
+                            color: var(--tp-theme-secondary);
+                        }
+                    }
+                }
+            }
+        }
+        &-icon{
+            & span{
+                font-size: 50px;
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                text-align: center;
+                line-height: 120px;
+                border-radius: 50%;
+                color: var(--tp-theme-primary);
+                background: var(--tp-common-gray);
+                margin-bottom: 20px;
+                @extend %transition;
+            }
+        }
+        &-title{
+            font-size: 20px;
+            font-weight: 800;
+        }
+        &-btn{
+            & a{
+                font-weight: 600;
+                color: var(--tp-theme-secondary);
+                @extend %transition;
+                &:hover{
+                    color: var(--tp-theme-primary);
+                }
+            }
+        }
+    }
+
+
+
+    &-3{
+        &-bg{
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        &-item{
+            position: relative;
+            padding: 40px;
+            z-index: 1;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 10px 40px 0px rgba(35, 35, 49, 0.06);
+            &:hover{
+                &::after{
+                    height: 100%;
+                    width: 100%;
+                    background-image: -moz-linear-gradient( 90deg, rgb(33,75,224) 0%, rgb(141,76,136) 71%, rgb(249,76,48) 100%);
+                    background-image: -webkit-linear-gradient( 90deg, rgb(33,75,224) 0%, rgb(141,76,136) 71%, rgb(249,76,48) 100%);
+                    background-image: -ms-linear-gradient( 90deg, rgb(33,75,224) 0%, rgb(141,76,136) 71%, rgb(249,76,48) 100%);
+                }
+                & .tp-countries-3-title{
+                    color: var(--tp-common-white);
+                }
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 10px;
+                width: 10px;
+                z-index: -1;
+                @include transition();
+                background: var(--tp-theme-secondary);
+            }
+        }
+        &-thumb{
+            margin-bottom: 25px;
+            & img{
+                border: 1px solid white;
+                border-radius: 50%;
+                width: 102px;
+                height: 102px;
+            }
+        }
+        &-title{
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+            @include transition();
+            & a{
+                background-image: linear-gradient(#9298dd, #f3f3f8), linear-gradient(#f3f3f7, #9298dd);
+                background-size: 0% 1px, 0 1px;
+                background-position: 100% 100%, 0 100%;
+                background-repeat: no-repeat;
+                transition: background-size 0.2s linear;
+                &:hover{
+                    background-size: 0 1px, 100% 1px;
+                }
+            }
+        }
+    }
+
+
+    &-4{
+        &-area{
+            &:hover{
+                & .tp-countries-4-nav{
+                    & button{
+                        opacity: 1;
+                        visibility: visible;
+                        left: 60px;
+                        &.countries-button-next-1{
+                            right: 60px;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+        &-slider{
+            & .tp-countries-4-active{
+                & .swiper-wrapper{
+                    & .swiper-slide{
+                        padding-top: 390px;
+                        padding-bottom: 390px;
+                        @media #{$xl} {
+                            padding-top: 300px;
+                            padding-bottom: 300px;
+                        }
+                        @media #{$lg} {
+                            padding-top: 250px;
+                            padding-bottom: 250px;
+                        }
+                        @media #{$md} {
+                            padding-top: 200px;
+                            padding-bottom: 200px;
+                        }
+                        @media #{$sm} {
+                            padding-top: 150px;
+                            padding-bottom: 150px;
+                        }
+                        @media #{$xs} {
+                            padding-top: 140px;
+                            padding-bottom: 140px;
+                        }
+                    }
+                }
+            }
+        }
+        &-bg{
+            position: absolute;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 0;
+            &::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba($color: rgb(22, 23, 26), $alpha: 0.4);
+            }
+        }
+        &-title{
+            font-size: 150px;
+            font-weight: 800;
+            color: var(--tp-common-white);
+            @media #{$xl,$lg,$md} {
+                font-size: 120px;
+            }
+            @media #{$sm} {
+                font-size: 80px;
+            }
+            @media #{$xs} {
+                font-size: 55px;
+            }
+        }
+        &-transparent{
+            position: absolute;
+            top: -90px;
+            left: -100px;
+            font-size: 360px;
+            font-weight: 800;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.078);
+            @media #{$xxl} {
+                font-size: 300px;
+                left: 0;
+            }
+            @media #{$xl} {
+                font-size: 270px;
+                left: 55px;
+            }
+            @media #{$lg} {
+                font-size: 250px;
+                left: 0;
+            }
+            @media #{$md} {
+                font-size: 185px;
+                top: -30px;
+                left: 0;
+            }
+            @media #{$sm} {
+                font-size: 140px;
+                left: 0;
+                top: -30px;
+            }
+            @media #{$xs} {
+                font-size: 85px;
+                left: 0;
+                top: 0;
+            }
+        }
+        &-btn{
+            & .tp-btn{
+                background: #e20935;
+                @media #{$sm,$xs} {
+                    padding: 16px 42px;
+                }
+            }
+        }
+        &-nav{
+            & button{
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                font-size: 18px;
+                top: 50%;
+                left: 50px;
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                color: var(--tp-common-white);
+                border: 1px solid var(--tp-common-white);
+                background: transparent;
+                z-index: 1;
+                @media #{$lg,$md,$sm,$xs} {
+                    display: none;
+                }
+                &:hover{
+                    border: 1px solid var(--tp-theme-primary);
+                    & i{
+                        color: var(--tp-theme-primary);
+                    }
+                }
+                & i{
+                    color: var(--tp-common-white);
+                    @include transition();
+                }
+                &.countries-button-next-1{
+                    left: auto;
+                    right: 50px;
+                    @media #{$lg,$md,$sm,$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.#{$theme-prefix}-country{
+    &-details{
+        &-wrap{
+            &-title{
+                font-size: 24px;
+                font-weight: 800;
+                margin-bottom: 24px;
+                @media #{$lg} {
+                    margin-bottom: 15px;
+                }
+            }
+            &-2{
+                @media #{$sm,$xs} {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        &-thumb-2{
+            @media #{$lg} {
+                margin-right: 20px;
+            }
+            @media #{$sm,$xs} {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

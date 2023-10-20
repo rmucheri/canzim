@@ -1,0 +1,157 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header-3{
+    &-sticky{
+        background: var(--tp-theme-1);
+        padding: 0 302px 0 266px;
+        @media #{$x4l,$x3l} {
+            padding: 0 210px 0 210px;
+        }
+        @media #{$xxl} {
+            padding: 0 150px 0 150px;
+        }
+        @media #{$xl} {
+            padding: 0 50px 0 50px;
+        }
+        @media #{$lg,$md,$sm,$xs} {
+            padding: 0 30px;
+        }
+    }
+    &-top{
+        background: var(--tp-theme-1);
+        padding: 6px 302px 7px 302px;
+        border-bottom: 1px solid rgb(44, 52, 78);
+        @media #{$x4l,$x3l} {
+            padding: 6px 210px 7px 210px;
+        }
+        @media #{$xxl} {
+            padding: 6px 150px 7px 150px;
+        }
+        @media #{$xl} {
+            padding: 6px 50px 7px 50px;
+        }
+        &-info{
+            & a{
+                color: rgb(142, 142, 142);
+                &:not(:last-of-type){
+                    margin-right: 40px;
+                    @media #{$x3l} {
+                        margin-right: 30px;
+                    }
+                }
+                & span{
+                    margin-right: 10px;
+                    color: var(--tp-common-white);
+                }
+                &:hover{
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+        &-right{
+            & .tp-header-top{
+                &-btn{
+                    & span{
+                        & a{
+                            color: rgb(142, 142, 142);
+                        }
+                        &::before{
+                            color: rgb(142, 142, 142);
+                        }
+                    }
+                }
+                &-social{
+                    & a{
+                        color: var(--tp-common-white);
+                        &:hover{
+                            color: var(--tp-theme-primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-logo{
+        background: var(--tp-common-white);
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        text-align: center;
+        @media #{$lg,$md,$sm,$xs} {
+            height: 90px;
+            line-height: 90px;
+            padding: 0 10px;
+        }
+        & img{
+            max-width: 100%;
+        }
+    }
+    &-main{
+        &-menu{
+            margin-left: 10px;
+            @media #{$xxl,$lg,$md,$sm,$xs} {
+                margin-left: 0;
+            }
+            & .tp-main-menu{
+                & ul{
+                    & li{
+                        &:hover{
+                            & > a{
+                                color: var(--tp-common-white);
+                            }
+                        }
+                        &.has-dropdown{
+                            &:hover{
+                                & > a{
+                                    color: var(--tp-common-white);
+                                }
+                            }
+                            & > a{
+                                &::after{
+                                    content: none;
+                                }
+                            }
+                        }
+                        & a{
+                            padding: 42px 0;
+                        }
+                    }
+                }
+            }
+        }
+        &-right{
+            & .tp-header-contact{
+                &-search{
+                    & span{
+                        & i{
+                            color: var(--tp-common-white);
+                        }
+                        &:hover{
+                            & i{
+                                color: var(--tp-theme-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-btn{
+        & .tp-btn{
+            @media #{$x3l} {
+                padding: 16px 45px;
+            }
+            @media #{$xxl} {
+                padding: 16px 36px;
+            }
+            @media #{$xl} {
+                padding: 16px 35px;
+            }
+        }
+    }
+}
+

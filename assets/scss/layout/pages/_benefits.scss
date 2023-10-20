@@ -1,0 +1,115 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.3 Benefits css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-benefits{
+    &-border{
+        border-bottom: 1px solid rgb(223, 223, 223);
+    }
+    &-item{
+        padding: 15px 20px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 20px 0px rgba(30, 22, 22, 0.06);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        &:hover{
+            & .tp-benefits{
+                &-icon{
+                    & span{
+                        background: var(--tp-theme-primary);
+                    }
+                }
+                &-title{
+                    color: var(--tp-theme-primary);
+                }
+            }
+        }
+    }
+    &-icon{
+        & span{
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 70px;
+            text-align: center;
+            font-size: 30px;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--tp-common-white);
+            @include transition();
+            background: var(--tp-heading-primary);
+        }
+    }
+    &-title{
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+        @include transition();
+    }
+    &-thumb{
+        @media #{$lg,$md,$sm,$xs} {
+            margin-bottom: 30px;
+        }
+         & img{
+            position: absolute;
+            right: 0;
+            top: 0;
+            @media #{$md,$sm,$xs} {
+                position: static;
+                width: 100%;
+            }
+         }
+        &-wrapper{
+            & .shape{
+                position: absolute;
+                bottom: -525px;
+                left: 0;
+                @media #{$lg,$md,$sm,$xs} {
+                    display: none;
+                }
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                top: 392px;
+                right: 45px;
+                height: 133px;
+                width: 10px;
+                background: var(--tp-theme-primary);
+                @media #{$md,$sm,$xs} {
+                    content: none;
+                }
+            }
+        }
+    }
+    &-progressbar{
+        padding: 30px;
+        text-align: center;
+        background: var(--tp-theme-secondary);
+        width: 240px;
+        height: 194px;
+        border: 5px solid white;
+        position: absolute;
+        bottom: -375px;
+        left: 40px;
+        @media #{$lg} {
+            bottom: -510px;
+        }
+        @media #{$md,$sm,$xs} {
+            position: static;
+        }
+        &-title{
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--tp-common-white);
+        }
+        & .circular{
+            & .knob{
+                font-size: 20px !important;
+                margin-top: 28px !important;
+            }
+        }
+    }
+}
